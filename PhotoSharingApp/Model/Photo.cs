@@ -19,7 +19,8 @@ namespace PhotoSharingApp.Model
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy}", ApplyFormatInEditMode =true)]
         public DateTime createdDate { get; set; }
         public String owner { get; set; }
-        public String Description { get; set }
+        [DataType(DataType.MultilineText)]
+        public String Description { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
       
     }
