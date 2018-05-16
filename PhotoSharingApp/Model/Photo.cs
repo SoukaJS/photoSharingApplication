@@ -20,8 +20,9 @@ namespace PhotoSharingApp.Model
         public DateTime createdDate { get; set; }
         public String owner { get; set; }
         [DataType(DataType.MultilineText)]
-        public String Description { get; set; }
+        public String description { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-      
+        public string imageMimeType { get; set; }
+
     }
 }

@@ -39,3 +39,7 @@ D:\C#\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.csprojRe
 D:\C#\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.csproj.CoreCompileInputs.cache
 D:\C#\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.dll
 D:\C#\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.pdb
+D:\C#\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.dll
+D:\C#\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.SqlServer.dll
+D:\C#\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.xml
+D:\C#\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.SqlServer.xml
