@@ -1,9 +1,11 @@
 ﻿
-
     <div>
-        <h2>All Photos</h2>
-        <p>
-            @Html.ActionLink("Add a Photo", "Create", "Photo")
-        </p>
+        <div style="padding-bottom:1%">
+            <h2 style="border-bottom:2px solid black;background-repeat: no-repeat;
+    background-attachment: fixed;">
+               Gallery
+            </h2>
+        </div>
+      
         @Html.Action("_PhotoGallery", "Photo")
     </div>

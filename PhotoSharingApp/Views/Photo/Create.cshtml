@@ -1,32 +1,63 @@
 ﻿@model PhotoSharingApp.Model.Photo
 
     <div>
-        <h2>Create New Photo</h2>
+        <div style="padding-bottom:1%">
+            <h2 style="border-bottom:2px solid black;background-repeat: no-repeat;
+    background-attachment: fixed;">Create New Photo</h2>
+
+        </div>
         @using (Html.BeginForm("Create", "Photo", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.ValidationSummary(true)
-            <p>
-                @Html.LabelFor(model => model.title):
-                @Html.EditorFor(model => model.title)
-                @Html.ValidationMessageFor(model => model.title)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.photoFile) :
-                <input type="file" name="Image" />
-            </p>
-            <p>
-                @Html.LabelFor(model => model.description) :
-                @Html.EditorFor(model => model.description)
-                @Html.ValidationMessageFor(model => model.description)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.owner) :
-                @Html.EditorFor(model => model.owner)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.createdDate) :
-                @Html.DisplayFor(model => model.createdDate)
-            </p>
+
+            <table>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.title)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.title)
+                        @Html.ValidationMessageFor(model => model.title)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.photoFile) 
+
+                    </td>
+                    <td>
+                        <input type="file" name="Image" />
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.description) 
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.description)
+                        @Html.ValidationMessageFor(model => model.description)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.owner) 
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.owner)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.createdDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.createdDate)
+                    </td>
+                </tr>
+            </table>
+
             <p>
                 <input type="submit" value="Create" />
                 @Html.ActionLink("Back to List", "Index")

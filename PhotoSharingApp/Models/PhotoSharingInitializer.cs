@@ -16,25 +16,27 @@ namespace PhotoSharingApp.Models
 
             Debug.WriteLine("eeeeeeeee");
             List<Comment> comments = new List<Comment>();
-            List<Photo> photo = new List<Photo>();
+            List<Photo> photos = new List<Photo>();
 
-            Photo ph = new Photo();
-            ph.title = "Test Photo";
-            ph.description = "tesst tesst :p";
-            ph.owner = "NaokiSato";
-            ph.photoFile = System.IO.File.ReadAllBytes("\\Users\\Skandar Ayedi\\Pictures\\hsouna.jpeg");
-            ph.createdDate = DateTime.Now;
-            ph.imageMimeType = "image/jpeg";
-            photo.Add(ph);
-            foreach (Photo p in photo)
+            Photo photo = new Photo();
+            photo.title = "Title1";
+            photo.description = "Description1";
+            photo.owner = "Bershka";
+            photo.photoFile = System.IO.File.ReadAllBytes("\\Users\\Skandar Ayedi\\Pictures\\1.jpeg");
+            photo.createdDate = DateTime.Now;
+            photo.imageMimeType = "image/jpeg";
+            photos.Add(photo);
+            foreach (Photo p in photos)
                 context.Photos.Add(p);
             context.SaveChanges();
-            Comment comm = new Comment();
-            comm.photoID = 1;
-            comm.user = "NaokiSato";
-            comm.subject = "Test Comment";
-            comm.body = "This comment should be appear in photo";
-            comments.Add(comm);
+
+
+            Comment comment = new Comment();
+            comment.photoID = 1;
+            comment.user = "NaokiSato";
+            comment.subject = "Test Comment";
+            comment.body = "This comment should be appear in photo";
+            comments.Add(comment);
             foreach (Comment c in comments)
                 context.Comments.Add(c);
             context.SaveChanges();

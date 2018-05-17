@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PhotoSharingApp.Model.Comment>
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <strong>Subject :</strong> @Html.DisplayFor(modelItem => item.subject)
+            <br>
+            <strong>Body :</strong>  @Html.DisplayFor(modelItem => item.body)
+        </div>
+        
+            
+        
+    }
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_CommentsList</title>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>

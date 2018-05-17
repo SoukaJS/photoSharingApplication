@@ -1,23 +1,53 @@
 ﻿@model IEnumerable<PhotoSharingApp.Model.Photo>
 @foreach (var item in Model)
 {
-    <h3>"@item.title"</h3>
+
+    <table style="">
+        <tr>
+            <td>
+                <img src="~/Images/logo.png" style="border-radius:50%;width:70Px;height:70px" />
+            </td>
+
+            <td>
+
+
+                <h3>&nbsp;<strong>@Html.DisplayFor(model => item.owner)</strong></h3>
+                <h6>
+                    &nbsp; @Html.DisplayFor(model => item.createdDate)
+                </h6>
+
+
+            </td>
+
+        </tr>
+    </table>
+
     if (item.photoFile != null)
     {
-        <img width="200" src="@Url.Action("GetImage", "Photo", new { id = item.photoID })" />
+    <div>
+
+
+        <div style="display:inline-block; border:2px solid #808080;" width="600">
+            <img width="600" src="@Url.Action("GetImage", "Photo", new { id = item.photoID })" />
+        </div>
+        <table width="600">
+            <tr>
+                <td>
+                    <h3>&nbsp;<strong>@item.title</strong></h3>
+                </td>
+                <td style="text-align:right">
+                    @Html.ActionLink("Display", "Display", new { id = item.photoID })
+                    <br>
+                    @Html.DisplayFor(model => item.createdDate)
+                </td>
+            </tr>
+        </table>
+    </div>
 
     }
 
-    <p>
-        Created By:
-        @Html.DisplayFor(model => item.owner)
-    </p>
-    <p>
-        Created On:
-        @Html.DisplayFor(model => item.createdDate)
-    </p>
-    @Html.ActionLink("Display", "Display",new { id = item.photoID })
 
+    
 
 }
 @{

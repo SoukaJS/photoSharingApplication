@@ -1,67 +1,81 @@
 ﻿@model PhotoSharingApp.Model.Photo
 
 <div>
-    <h4>Photo</h4>
+
     <hr />
 
     @if (Model.photoFile != null)
     {
-        <img width="800" src="@Url.Action("GetImage", "Photo",
+        <div>
+            <img width="800" src="@Url.Action("GetImage", "Photo",
                                            new { id=Model.photoID })" />
+        </div>
+
     }
-    <dl class="dl-horizontal">
-        
-        <dt>
-            @Html.DisplayNameFor(model => model.title)
 
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.title)
-        </dd>
+    <h3 style="border-bottom:2px solid #808080"><strong>Details</strong></h3>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.photoFile)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.photoFile)
-        </dd>
+    <table>
+        <tr>
+            <td>
+                <strong> @Html.DisplayNameFor(model => model.title)</strong>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.title)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong> @Html.DisplayNameFor(model => model.photoFile)</strong>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.photoFile)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>@Html.DisplayNameFor(model => model.description)</strong>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.description)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>@Html.DisplayNameFor(model => model.createdDate)</strong>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.createdDate)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>@Html.DisplayNameFor(model => model.owner)</strong>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.owner)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>@Html.DisplayNameFor(model => model.imageMimeType)</strong>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.imageMimeType)
+            </td>
+        </tr>
+    </table>
+    <div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.description)
-        </dt>
+        <h3 style="border-bottom:2px solid #808080"><strong>Comments</strong></h3>
+        @Html.Action("_CommentsList", "Comment", new { number = 2 })
 
-        <dd>
-            @Html.DisplayFor(model => model.description)
-        </dd>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.createdDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.createdDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.owner)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.owner)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.imageMimeType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.imageMimeType)
-        </dd>
-
-    </dl>
 </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.photoID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.photoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
