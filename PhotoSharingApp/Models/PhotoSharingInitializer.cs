@@ -22,7 +22,7 @@ namespace PhotoSharingApp.Models
             ph.title = "Test Photo";
             ph.description = "tesst tesst :p";
             ph.owner = "NaokiSato";
-            ph.photoFile = System.IO.File.ReadAllBytes("\\Users\\Skandar Ayedi\\Pictures\\skandar.jpeg");
+            ph.photoFile = System.IO.File.ReadAllBytes("\\Users\\Skandar Ayedi\\Pictures\\hsouna.jpeg");
             ph.createdDate = DateTime.Now;
             ph.imageMimeType = "image/jpeg";
             photo.Add(ph);
@@ -39,7 +39,7 @@ namespace PhotoSharingApp.Models
                 context.Comments.Add(c);
             context.SaveChanges();
 
-            base.Seed(context);
+           // base.Seed(context);
         }
         // define getFileBytes
         /* byte[] getFileBytes(string image)
