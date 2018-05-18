@@ -13,7 +13,6 @@ namespace PhotoSharingApp.Models
         protected override void Seed(PhotoSharingContext context)
         {
 
-
             Debug.WriteLine("eeeeeeeee");
             List<Comment> comments = new List<Comment>();
             List<Photo> photos = new List<Photo>();
