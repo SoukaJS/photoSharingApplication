@@ -32,6 +32,7 @@ namespace PhotoSharingApp.Controllers
         }
 
 
+
         [ChildActionOnly]
         public ActionResult _CommentsList(int number = 0)
         {
