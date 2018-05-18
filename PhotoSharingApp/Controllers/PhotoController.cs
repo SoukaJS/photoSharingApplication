@@ -115,6 +115,7 @@ namespace PhotoSharingApp.Controller
                           orderby p.createdDate descending
                           select p).Take(number).ToList();
             }
+
             return PartialView("_PhotoGallery", photos);
         }
     }
