@@ -10,6 +10,7 @@ namespace PhotoSharingApp.Model
     public class Photo
     {
 
+
         public int photoID { get; set; }
         public String title { get; set; }
         [DisplayName("Picture")]
