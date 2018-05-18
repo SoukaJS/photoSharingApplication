@@ -13,6 +13,7 @@ namespace PhotoSharingApp.Controllers
         private void logValues(RouteData routeData)
         {
             Debug.WriteLine("Action Values");
+
             foreach (var value in routeData.Values)
             {
                 Debug.WriteLine("Key : " + value.Key + " / Value :" + value.Value);
